@@ -1,26 +1,11 @@
 # DeepSeek Harness 插件
 
-本仓库包含一个 DeepSeek Harness 本地插件：`dsh-quota-guard`。它按滑动时间窗口估算并限制模型请求费用。
+本仓库包含 DeepSeek Harness 本地插件：
 
-## 插件功能
+- [`dsh-quota-guard`](dsh-quota-guard/README.md)：按滑动窗口估算并限制模型请求费用。
+- [`dsh-clock-lunar`](dsh-clock-lunar/README.md)：在会话标题栏显示时间、农历、节气、节日和假期状态。
 
-- 在每次模型流请求开始前检查额度，超过任一窗口限制时拒绝请求。
-- 提供周额度和月额度两种模式，并将并发请求的预留费用计入额度。
-- 在会话标题栏显示剩余比例、已用金额和预计重置时间。
-- 本地保存配置与用量记录，不依赖外部额度服务。
-
-## 快速开始
-
-将 `dsh-quota-guard/` 作为本地 DSH 插件包添加。仓库中已包含构建产物；修改源码后，可在该目录重新构建。构建需要 Node.js 22.19.0 或更高版本：
-
-```sh
-cd dsh-quota-guard
-npm ci
-npm run build
-```
-
-具体额度算法、配置项、存储位置和兼容范围请见
-[插件使用说明](dsh-quota-guard/README.md)。
+将所需插件目录作为本地 DSH 插件包添加。两个插件目录内均包含构建产物和各自的使用说明。
 
 ## 目录结构
 
@@ -28,3 +13,6 @@ npm run build
 - `dsh-quota-guard/lib/`：构建后的插件入口。
 - `dsh-quota-guard/cordis.patch.yml`：DSH 插件注册与默认配置。
 - `dsh-quota-guard/README.md`：安装、配置和使用说明。
+- `dsh-clock-lunar/src/`：时钟与农历插件源码。
+- `dsh-clock-lunar/lib/`：编译后的时钟插件入口。
+- `dsh-clock-lunar/README.md`：时钟插件构建与日期数据说明。

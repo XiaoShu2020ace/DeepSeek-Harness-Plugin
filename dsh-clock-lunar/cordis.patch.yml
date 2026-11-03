@@ -1,0 +1,4 @@
+- insert:
+    - id: dsh-clock-lunar
+      name: dsh-clock-lunar
+      config: {}

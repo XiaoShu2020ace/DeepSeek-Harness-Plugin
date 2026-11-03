@@ -1,0 +1,65 @@
+.widget {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.clock,
+.clockSpecial {
+  color: #666;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  cursor: default;
+  outline: none;
+}
+
+.clockSpecial {
+  color: #e53935;
+}
+
+.widget:focus-within .clock,
+.widget:focus-within .clockSpecial {
+  outline: 2px solid rgba(102, 102, 102, 0.28);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 10000;
+  top: calc(100% + 9px);
+  right: 0;
+  display: block;
+  width: max-content;
+  max-width: min(420px, calc(100vw - 24px));
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: #202124;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+  color: #f5f5f5;
+  font: 12px/1.7 Arial, "Microsoft YaHei", sans-serif;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-3px);
+  transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+}
+
+.widget:hover .tooltip,
+.widget:focus-within .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tooltipLine {
+  white-space: nowrap;
+}
