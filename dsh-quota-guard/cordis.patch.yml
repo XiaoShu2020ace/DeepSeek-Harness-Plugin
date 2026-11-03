@@ -1,0 +1,12 @@
+- insert:
+    - id: dsh-quota-guard
+      name: dsh-quota-guard
+      config:
+        mode: week
+        bigLimitCny: 200
+        smallWindowHours: 5
+        smallLimitCny: 46.67
+        inputCnyPerMillion: 1.08
+        cachedInputCnyPerMillion: 0.02
+        outputCnyPerMillion: 4.32
+        reservationOutputTokens: 8192
